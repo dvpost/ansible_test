@@ -6,4 +6,4 @@
   tasks:
     - name: Test Message
       debug:
-        msg: "Hello {{ username }}"
+        msg: "username {{ username }}, age: {{ username }}"
