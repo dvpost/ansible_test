@@ -1,9 +1,16 @@
 ---
 - hosts: all
+  vars_prompt:
 
-  gather_facts: no
+    - name: username
+      prompt: What is your username?
+      private: no
+
+    - name: password
+      prompt: What is your password?
 
   tasks:
-    - name: Test Message
-      debug:
-        msg: "AWX and Ansible"
+
+    - name: Print a message
+      ansible.builtin.debug:
+        msg: 'Logging in as {{ username }}'
